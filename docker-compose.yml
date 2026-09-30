@@ -1,0 +1,13 @@
+services:
+  seal-service:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SEAL_DB_PATH: /data/seal.db
+    volumes:
+      - seal-data:/data
+    restart: unless-stopped
+
+volumes:
+  seal-data:
